@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Meu Portfólio</title>
+
   <style>
     body {
       font-family: Arial;
@@ -9,47 +10,116 @@
       background-color: #111;
       color: white;
     }
+
     img {
       width: 300px;
       margin: 10px;
       border-radius: 10px;
     }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   </style>
 </head>
+
 <body>
 
   <h1>Meu Portfólio de Fotografia</h1>
 
-  <img src="foto_1.jpg">
-  <img src="foto_2.jpg">
-  <img src="foto_3.jpg">
-  <img src="foto_4.jpg">
-  <img src="foto_5.jpg">
-  <img src="foto_6.jpg">
-  <img src="foto_7.jpg">
-  <img src="foto_8.jpg">
-  <img src="foto_9.jpg">
-  <img src="foto_10.jpg">
-  <img src="foto_11.jpg">
-  <img src="foto_12.jpg">
-  <img src="foto_13.jpg">
-  <img src="foto_14.jpg">
-  <img src="foto_15.jpg">
-  <img src="foto_16.jpg">
-  <img src="foto_17.jpg">
-  <img src="foto_18.jpg">
-  <img src="foto_19.jpg">
-  <img src="foto_20.jpg">
-  <img src="foto_21.jpg">
-  <img src="foto_22.jpg">
-  <img src="foto_23.jpg">
-  <img src="foto_24.jpg">
-  <img src="foto_25.jpg">
-  <img src="foto_26.jpg">
-  <img src="foto_27.jpg">
-  <img src="foto_28.jpg">
-  <img src="foto_29.jpg">
-  <img src="foto_30.jpg">
+  <!-- BOTÕES -->
+  <button onclick="mostrar('casamento')">Wedding & Pre-Wedding</button>
+  <button onclick="mostrar('familia')">Família & Gestante</button>
+  <button onclick="mostrar('gastronomia')">Fotografia Gastronômica</button>
+  <button onclick="mostrar('fitness')">Fitness & Lifestyle</button>
+  <button onclick="mostrar('todos')">Todos</button>
+
+  <!-- CASAMENTO -->
+  <div id="casamento">
+    <img src="foto_1.jpg">
+    <img src="foto_2.jpg">
+    <img src="foto_3.jpg">
+    <img src="foto_4.jpg">
+    <img src="foto_5.jpg">
+    <img src="foto_6.jpg">
+    <img src="foto_7.jpg">
+    <img src="foto_8.jpg">
+    <img src="foto_9.jpg">
+    <img src="foto_10.jpg">
+    <img src="foto_11.jpg">
+    <img src="foto_12.jpg">
+    <img src="foto_13.jpg">
+    <img src="foto_14.jpg">
+    <img src="foto_15.jpg">
+    <img src="foto_16.jpg">
+    <img src="foto_17.jpg">
+    <img src="foto_18.jpg">
+    <img src="foto_19.jpg">
+    <img src="foto_20.jpg">
+    <img src="foto_21.jpg">
+    <img src="foto_22.jpg">
+    <img src="foto_23.jpg">
+    <img src="foto_24.jpg">
+    <img src="foto_25.jpg">
+  </div>
+
+  <!-- FAMÍLIA -->
+  <div id="familia">
+    <img src="foto_26.jpg">
+    <img src="foto_27.jpg">
+    <img src="foto_28.jpg">
+    <img src="foto_29.jpg">
+    <img src="foto_30.jpg">
+  </div>
+
+  <!-- GASTRONOMIA -->
+  <div id="gastronomia">
+    <img src="cmd.jpg">
+    <img src="cmd0.jpg">
+    <img src="cmd1.jpg">
+    <img src="cmd2.jpg">
+    <img src="cmd3.jpg">
+    <img src="cmd4.jpg">
+    <img src="cmd5.jpg">
+    <img src="cmd6.jpg">
+
+  </div>
+
+  <!-- OUTROS -->
+  <div id="outros">
+    <img src="bre.jpg">
+    <img src="cam.jpg">
+    <img src="f.jpg">
+    <img src="f1.jpg">
+    <img src="f1-2.jpg">
+    <img src="f1-2-3.jpg">
+    <img src="f1-2-3-4.jpg">
+
+
+  </div>
+
+  <script>
+    function mostrar(tipo) {
+      let secoes = ["casamento", "familia", "gastronomia", "fitness"];
+
+      // esconder tudo
+      secoes.forEach(id => {
+        document.getElementById(id).style.display = "none";
+      });
+
+      if (tipo === "todos") {
+        secoes.forEach(id => {
+          document.getElementById(id).style.display = "block";
+        });
+      } else {
+        document.getElementById(tipo).style.display = "block";
+      }
+    }
+  </script>
 
 </body>
 </html>

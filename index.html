@@ -1,125 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-  <title>Meu Portfólio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thalia Silva | Memory Warehouse</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; text-align: center; background: #0a0a0a; color: #fff; margin: 0; padding: 20px; }
+        h1 { font-weight: 200; letter-spacing: 5px; margin-top: 50px; text-transform: uppercase; }
+        .subtitle { color: #666; font-size: 14px; margin-bottom: 40px; letter-spacing: 2px; }
+        
+        .categories { margin: 40px 0; position: sticky; top: 0; background: rgba(10, 10, 10, 0.9); padding: 15px; z-index: 1000; backdrop-filter: blur(5px); }
+        button { padding: 8px 18px; margin: 5px; cursor: pointer; border: 1px solid #333; background: transparent; color: #999; border-radius: 0px; transition: 0.3s; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; }
+        button:hover, button.active { border-color: #fff; color: #fff; }
 
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background-color: #111;
-      color: white;
-    }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 15px; max-width: 1600px; margin: 0 auto; }
+        .gallery img { width: 100%; height: auto; display: block; transition: 0.6s; filter: brightness(0.8); }
+        .gallery img:hover { filter: brightness(1); transform: scale(1.02); }
 
-    img {
-      width: 300px;
-      margin: 10px;
-      border-radius: 10px;
-    }
-
-    button {
-      margin: 10px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
+        @media (max-width: 600px) { .gallery { grid-template-columns: 1fr; } }
+    </style>
 </head>
-
 <body>
 
-  <h1>Meu Portfólio de Fotografia</h1>
+    <h1>Memory Warehouse</h1>
+    <p class="subtitle">Thalia Silva — Photography</p>
 
-  <!-- BOTÕES -->
-  <button onclick="mostrar('casamento')">Wedding & Pre-Wedding</button>
-  <button onclick="mostrar('familia')">Família & Gestante</button>
-  <button onclick="mostrar('gastronomia')">Fotografia Gastronômica</button>
-  <button onclick="mostrar('fitness')">Fitness & Lifestyle</button>
-  <button onclick="mostrar('todos')">Todos</button>
+    <div class="categories">
+        <button class="active" onclick="filterPhotos('all', this)">All</button>
+        <button onclick="filterPhotos('wedding', this)">Weding & Pre Wedding</button>
+        <button onclick="filterPhotos('gastronomy', this)">Gastronomy</button>
+        <button onclick="filterPhotos('gestante', this)">Gestante</button>
+        <button onclick="filterPhotos('portrait', this)">Portrait</button>
+    </div>
 
-  <!-- CASAMENTO -->
-  <div id="casamento">
-    <img src="foto_1.jpg">
-    <img src="foto_2.jpg">
-    <img src="foto_3.jpg">
-    <img src="foto_4.jpg">
-    <img src="foto_5.jpg">
-    <img src="foto_6.jpg">
-    <img src="foto_7.jpg">
-    <img src="foto_8.jpg">
-    <img src="foto_9.jpg">
-    <img src="foto_10.jpg">
-    <img src="foto_11.jpg">
-    <img src="foto_12.jpg">
-    <img src="foto_13.jpg">
-    <img src="foto_14.jpg">
-    <img src="foto_15.jpg">
-    <img src="foto_16.jpg">
-    <img src="foto_17.jpg">
-    <img src="foto_18.jpg">
-    <img src="foto_19.jpg">
-    <img src="foto_20.jpg">
-    <img src="foto_21.jpg">
-    <img src="foto_22.jpg">
-    <img src="foto_23.jpg">
-    <img src="foto_24.jpg">
-    <img src="foto_25.jpg">
-  </div>
+    <div class="gallery" id="photo-gallery">
+        <img src="cmd.jpg" class="gastronomy" alt="Gastronomy">
+        <img src="cmd0.jpg" class="gastronomy" alt="Gastronomy">
+        <img src="cmd1.jpg" class="gastronomy" alt="Gastronomy">
+        <img src="cmd2.jpg" class="gastronomy" alt="Gastronomy">
+        <img src="cmd3.jpg" class="gastronomy" alt="Gastronomy">
+        <img src="cmd4.jpg" class="gastronomy" alt="Gastronomy">
+        <img src="cmd5.jpg" class="gastronomy" alt="Gastronomy">
+        <img src="cmd6.jpg" class="gastronomy" alt="Gastronomy">
 
-  <!-- FAMÍLIA -->
-  <div id="familia">
-    <img src="foto_26.jpg">
-    <img src="foto_27.jpg">
-    <img src="foto_28.jpg">
-    <img src="foto_29.jpg">
-    <img src="foto_30.jpg">
-  </div>
+        <img src="foto_3.jpg" class="wedding" alt="Weding">
+        <img src="foto_8.jpg" class="wedding" alt="Weding">
+        <img src="foto_9.jpg" class="wedding" alt="Weding">
+        <img src="foto_12.jpg" class="wedding" alt="Weding">
+        <img src="foto_13.jpg" class="wedding" alt="Weding">
+        <img src="foto_14.jpg" class="wedding" alt="Weding">
+        <img src="foto_18.jpg" class="wedding" alt="Weding">
+        <img src="foto_22.jpg" class="wedding" alt="Weding">
+        <img src="foto_25.jpg" class="wedding" alt="Weding">
 
-  <!-- GASTRONOMIA -->
-  <div id="gastronomia">
-    <img src="cmd.jpg">
-    <img src="cmd0.jpg">
-    <img src="cmd1.jpg">
-    <img src="cmd2.jpg">
-    <img src="cmd3.jpg">
-    <img src="cmd4.jpg">
-    <img src="cmd5.jpg">
-    <img src="cmd6.jpg">
+        <img src="gest.jpg" class="gestante" alt="Gestante">
+        <img src="gest1.jpg" class="gestante" alt="Gestante">
+        <img src="gest2.jpg" class="gestante" alt="Gestante">
 
-  </div>
+        <img src="bre.jpg" class="portrait" alt="Portrait">
+        <img src="f1-2.jpg" class="portrait" alt="Portrait">
+        <img src="f1-2-3-4.jpg" class="portrait" alt="Portrait">
+    </div>
 
-  <!-- OUTROS -->
-  <div id="outros">
-    <img src="bre.jpg">
-    <img src="cam.jpg">
-    <img src="f.jpg">
-    <img src="f1.jpg">
-    <img src="f1-2.jpg">
-    <img src="f1-2-3.jpg">
-    <img src="f1-2-3-4.jpg">
+    <script>
+        function filterPhotos(category, btn) {
+            document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
 
-
-  </div>
-
-  <script>
-    function mostrar(tipo) {
-      let secoes = ["casamento", "familia", "gastronomia", "fitness"];
-
-      // esconder tudo
-      secoes.forEach(id => {
-        document.getElementById(id).style.display = "none";
-      });
-
-      if (tipo === "todos") {
-        secoes.forEach(id => {
-          document.getElementById(id).style.display = "block";
-        });
-      } else {
-        document.getElementById(tipo).style.display = "block";
-      }
-    }
-  </script>
+            const photos = document.querySelectorAll('.gallery img');
+            photos.forEach(photo => {
+                if (category === 'all' || photo.classList.contains(category)) {
+                    photo.style.display = 'block';
+                } else {
+                    photo.style.display = 'none';
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
